@@ -25,7 +25,7 @@ while True:
         if(len(option) > 2):
             print('Too many words, please choose from the designated list(Make sure filename is one word')
         elif option[0] == 'add':
-            if os.path.exists(command[1]):
+            if os.path.exists(option[1]):
                 fat = open(OriginalStorage + 'fat_table.txt', 'a+')
                 fileName = option[1]
                 with open(OriginalStorage + fileName) as bigfile:
@@ -45,7 +45,7 @@ while True:
                 print("File Not Found")
             
         elif option[0] == 'delete':
-            if os.path.exists(command[1]):
+            if os.path.exists(option[1]):
                 file_to_delete = option[1]
                 for filename in os.listdir(OriginalStorage):
                     if filename.startswith(file_to_delete):
