@@ -45,17 +45,15 @@ while True:
                 print("File Not Found")
             
         elif option[0] == 'delete':
-            if os.path.exists(option[1]):
-                file_to_delete = option[1]
-                for filename in os.listdir(OriginalStorage):
-                    if filename.startswith(file_to_delete):
-                        os.remove(filename)
-                fat = open(OriginalStorage + 'fat_table.txt', 'r')
-                fatLines = fat.readlines()
-                fat.close()
-                fat = open(OriginalStorage + 'fat_table.txt', 'w')
-                for line in fatLines:
-                    if file_to_delete not in line:
-                        fat.write(line)
-            else:
-                print("File not Found")
+           file_to_delete = option[1]
+            for filename in os.listdir(OriginalStorage):
+            if filename.startswith(file_to_delete):
+                os.remove(filename)
+            fat = open(OriginalStorage + 'fat_table.txt', 'r')
+            fatLines = fat.readlines()
+            fat.close()
+            fat = open(OriginalStorage + 'fat_table.txt', 'w')
+            for line in fatLines:
+                if file_to_delete not in line:
+                    fat.write(line)
+            
