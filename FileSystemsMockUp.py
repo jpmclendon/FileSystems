@@ -24,6 +24,7 @@ while True:
         option = option.split()
         if(len(option) > 2):
             print('Too many words, please choose from the designated list(Make sure filename is one word')
+#Add function, takes a txt file in the folder and splits it depending on the number of lines in "chunk"
         elif option[0] == 'add':
             if os.path.exists(option[1]):
                 fat = open(OriginalStorage + 'fat_table.txt', 'a+')
@@ -43,7 +44,7 @@ while True:
                     fat.close()
             else:
                 print("File Not Found")
-            
+#delete function permanently deletes any file with the name of the file given by the user           
         elif option[0] == 'delete':
            file_to_delete = option[1]
             for filename in os.listdir(OriginalStorage):
